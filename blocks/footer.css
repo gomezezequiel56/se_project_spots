@@ -1,8 +1,7 @@
 .footer {
-  height: 120px;
   width: 100%;
+  padding: 60px 0;
   border-top: 1px rgba(33, 33, 33, 0.4) solid;
-  margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,14 +13,5 @@
   font-size: 16px;
   color: #212121;
   opacity: 70%;
-}
-
-@media screen and (max-width: 627px) {
-  .footer {
-    display: flex;
-    flex-direction: row;
-    max-width: 288px;
-    align-items: center;
-    text-align: center;
-  }
+  margin: 0 0 0;
 }

@@ -1,16 +1,22 @@
 # Project 3: Spots
 
-An image sharing site
+A responsive webisite that showcases travel photography and allows user to interact with the photos and profile.
 
 ## Description
 
-The project is made for the element to display correctly on popular screen sizes. And the main function is to create a profile and being able to add images as well
+The project is to showcase travel spots in a photo gallery and allows users to interact with elements in the gallery. This site also supports popular screen sizes.
 
-### Tech Stack
+### Technologies used
 
-- HTML
-- CSS
+- HTML (semantic markup)
+- CSS : Grid,Flexbox, animations
 - Responsive Design
+- BEM
+
+## Key Features
+
+- A responsive layout that works one desktop, tablet and mobile
+- interactive element like the heart, edit, and new post button
 
 ## Deployment
 
@@ -18,6 +24,10 @@ This webpage is deployed to GitHub Pages
 
 -Deployment Link:
 https://gomezezequiel56.github.io/se_project_spots
+
+## Plans for Improvement
+
+My plan to improve is to be able to let users to add and input their own profiles to the website and allow them to edit it. I also need to improve on css techniques to better my ability to do tasks. I need to practice more on this.
 
 **Figma**
 
