@@ -38,3 +38,7 @@ My plan to improve is to be able to let users to add and input their own profile
 The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
 
 Good luck and have fun!
+
+## Project Pitch Video
+
+Check out https://drive.google.com/file/d/1D-GzFCSv13wjyeFTFoYFjBG_R0wcZgkG/view?usp=sharing, where I describe my project and some challenges I had while building it.
