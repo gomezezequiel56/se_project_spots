@@ -58,7 +58,7 @@
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">
-            <img src="./images/close-icon.svg" alt="close icon" />
+            <img src="#" alt="close icon" />
           </button>
           <h2 class="modal__title">Edit Profile</h2>
           <form class="modal__form">
@@ -69,6 +69,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
+                required
               />
             </label>
             <label for="profile-description-input" class="modal__label">
@@ -78,6 +79,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Describe yourself"
+                required
               />
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
@@ -98,6 +100,7 @@
                 type="url"
                 class="modal__input"
                 placeholder="Paste a link to the picture"
+                required
               />
             </label>
             <label for="card-caption-input" class="modal__label">
@@ -107,6 +110,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
+                required
               />
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
@@ -116,12 +120,13 @@
     </div>
 
     <div class="modal modal_type_preview" id="preview-modal">
-        <div class="modal__image-container">
-          <button type="button" class="modal__close-btn modal__close-btn_type_preview">
-          </button>
-          <img src="#" alt="" class="modal__image">
-          <p class="modal__caption"></p>
-        </div>
+      <div class="modal__image-container">
+        <button
+          type="button"
+          class="modal__close-btn modal__close-btn_type_preview"
+        ></button>
+        <img src="#" alt="" class="modal__image" />
+        <p class="modal__caption"></p>
       </div>
     </div>
     <script src="./scripts/index.js"></script>

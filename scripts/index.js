@@ -74,12 +74,11 @@ function getCardElement(data) {
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-button");
   cardDeleteBtnEl.addEventListener("click", () => {
     cardElement.remove();
-    cardElement = null;
   });
 
   cardImageEl.addEventListener("click", () => {
     previewImageEl.src = data.link;
-    previewNameEl.alt = data.name;
+    previewImageEl.alt = data.name;
     previewNameEl.textContent = data.name;
     openModal(previewModal);
   });
@@ -141,6 +140,7 @@ function handleNewPostSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
 
+  newPostFormModal.reset();
   closeModal(newPostModal);
 }
 

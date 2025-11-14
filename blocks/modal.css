@@ -47,6 +47,7 @@
   height: 40px;
   width: 40px;
   border: none;
+  background-image: url(../images/close-icon.svg);
   background-color: transparent;
   padding: 0 0 0;
   opacity: 0.4;
@@ -151,6 +152,11 @@
   .modal__title {
     margin: 0 0 34px;
     font-size: 20px;
+  }
+
+  .modal__caption {
+    font-size: 16px;
+    line-height: 19px;
   }
 
   .modal__container {

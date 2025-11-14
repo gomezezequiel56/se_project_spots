@@ -38,6 +38,8 @@
   width: 32px;
   height: 32px;
   background-image: url(../images/DefaultTrash.svg);
+  background-repeat: no-repeat;
+  background-position: center;
   border: none;
   background-color: transparent;
   padding: 0;
@@ -53,17 +55,19 @@
 
 .card__like-butn {
   background-image: url(../images/heart.svg);
+  background-repeat: no-repeat;
+  background-position: center;
   height: 20px;
   width: 23px;
   border: none;
   background-color: transparent;
   padding: 0;
-  opacity: 40%;
+  opacity: 0.4;
   cursor: pointer;
 }
 
 .card__like-butn:hover {
-  opacity: 100%;
+  opacity: 1;
   cursor: pointer;
 }
 
