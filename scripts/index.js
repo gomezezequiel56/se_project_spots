@@ -34,15 +34,20 @@ const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const editProfileNameInput = editProfileModal.querySelector(
-  "#profile-name-input"
+  "#profile-name-input",
 );
 const editProfileDescriptionInput = editProfileModal.querySelector(
-  "#profile-description-input"
+  "#profile-description-input",
 );
 
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
+const cardSubmitBtn = newPostModal.querySelector(".modal__submit-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
+
+const newPostFormModal = newPostModal.querySelector(".modal__form");
+const newPostLinkInput = newPostModal.querySelector("#card-image-input");
+const newPostCaptionInput = newPostModal.querySelector("#card-caption-input");
 
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
@@ -51,6 +56,8 @@ const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 const previewImageEl = previewModal.querySelector(".modal__image");
 const previewNameEl = previewModal.querySelector(".modal__caption");
+
+const modalContainer = document.querySelector(".modal__container");
 
 const cardTemplate = document
   .querySelector("#card-template")
@@ -97,6 +104,11 @@ function closeModal(modal) {
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  resetValidation(
+    editProfileForm,
+    [editProfileNameInput, editProfileDescriptionInput],
+    settings,
+  );
   openModal(editProfileModal);
 });
 
@@ -104,7 +116,27 @@ editProfileCloseBtn.addEventListener("click", function () {
   closeModal(editProfileModal);
 });
 
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeModal(editProfileModal);
+  }
+});
+
+editProfileModal.addEventListener("click", function (event) {
+  const editProfileContainer =
+    editProfileModal.querySelector(".modal__container");
+  const clickedOutside = !editProfileContainer.contains(event.target);
+  if (clickedOutside && event.target !== editProfileBtn) {
+    closeModal(editProfileModal);
+  }
+});
+
 newPostBtn.addEventListener("click", function () {
+  resetValidation(
+    newPostFormModal,
+    [newPostLinkInput, newPostCaptionInput],
+    settings,
+  );
   openModal(newPostModal);
 });
 
@@ -112,8 +144,36 @@ newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeModal(newPostModal);
+  }
+});
+
+newPostModal.addEventListener("click", function (event) {
+  const newPostContainer = newPostModal.querySelector(".modal__container");
+  const clickedOutside = !newPostContainer.contains(event.target);
+  if (clickedOutside && event.target !== newPostBtn) {
+    closeModal(newPostModal);
+  }
+});
+
 previewModalCloseBtn.addEventListener("click", () => {
   closeModal(previewModal);
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeModal(previewModal);
+  }
+});
+
+document.addEventListener("click", function (event) {
+  const outsideImage = !cardsList.contains(event.target);
+  if (outsideImage && event.target !== cardsList) {
+    console.log("Hello");
+    closeModal(previewModal);
+  }
 });
 
 function handleEditProfileSubmit(evt) {
@@ -124,10 +184,6 @@ function handleEditProfileSubmit(evt) {
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
-
-const newPostFormModal = newPostModal.querySelector(".modal__form");
-const newPostLinkInput = newPostModal.querySelector("#card-image-input");
-const newPostCaptionInput = newPostModal.querySelector("#card-caption-input");
 
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
@@ -141,6 +197,8 @@ function handleNewPostSubmit(evt) {
   cardsList.prepend(cardElement);
 
   newPostFormModal.reset();
+  disableButton(cardSubmitBtn, settings);
+
   closeModal(newPostModal);
 }
 
