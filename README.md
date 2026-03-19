@@ -41,4 +41,4 @@ Good luck and have fun!
 
 ## Project Pitch Video
 
-Check out https://drive.google.com/file/d/1D-GzFCSv13wjyeFTFoYFjBG_R0wcZgkG/view?usp=sharing, where I describe my project and some challenges I had while building it.
+Check out https://drive.google.com/file/d/1Eqi_ULKkZD9dgCNd3-tEvXHbAO6Mqu8q/view?usp=drive_link, where I describe my project and some challenges I had while building it.
